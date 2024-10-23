@@ -7,7 +7,6 @@ import com.nikhilt.ridematch.entities.Location;
 import com.nikhilt.ridematch.entities.Rider;
 import com.nikhilt.ridematch.exceptions.match.MatchException;
 import com.nikhilt.ridematch.exceptions.ride.RideException;
-import com.nikhilt.ridematch.repositories.RiderRepository;
 import com.nikhilt.ridematch.services.IDriverService;
 import com.nikhilt.ridematch.services.IMatchingService;
 import com.nikhilt.ridematch.services.IRideManager;
@@ -21,15 +20,12 @@ public class RideManager extends IRideManager {
     private static final int DRIVER_LIMIT = 5;
     private static final int RANGE = 5;
 
-    RiderRepository riderRepository;
-
     IDriverService driverService;
     IRiderService riderService;
     IRideService rideService;
     IMatchingService matchingService;
 
     public RideManager() {
-        this.riderRepository = new RiderRepository();
         this.driverService = new DriverServiceImpl();
         this.riderService = new RiderServiceImpl();
         this.rideService = new RideServiceImpl();

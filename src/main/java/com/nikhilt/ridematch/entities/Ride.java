@@ -3,10 +3,10 @@ package com.nikhilt.ridematch.entities;
 import com.nikhilt.ridematch.constants.RideState;
 
 public class Ride {
-    private String rideId;
-    private Rider rider;
-    private Driver driver;
-    private Location source;
+    private final String rideId;
+    private final Rider rider;
+    private final Driver driver;
+    private final Location source;
     private Location destination;
     private Integer timeTaken;
     private RideState state;

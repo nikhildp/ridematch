@@ -3,9 +3,9 @@ package com.nikhilt.ridematch.dtos;
 import com.nikhilt.ridematch.entities.Ride;
 
 public class RideSummary {
-    private String rideId;
-    private String driverId;
-    private Float fare;
+    private final String rideId;
+    private final String driverId;
+    private final Float fare;
 
     RideSummary(Ride ride) {
         this.rideId = ride.getRideId();

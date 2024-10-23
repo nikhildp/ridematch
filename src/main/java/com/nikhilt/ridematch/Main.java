@@ -1,7 +1,7 @@
 package com.nikhilt.ridematch;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         /*
         Sample code to read from file passed as command line argument
         try {
@@ -16,5 +16,5 @@ public class Main {
         } catch (IOException e) {
         }
         */
-	}
+    }
 }

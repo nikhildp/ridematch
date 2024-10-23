@@ -18,7 +18,7 @@ public abstract class Repository<K, V> {
         return values.get(key);
     }
 
-    public boolean contains(K key){
+    public boolean contains(K key) {
         return values.containsKey(key);
     }
 

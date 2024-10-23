@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IDriverService {
     void addDriver(String driverId, int x, int y);
+
     void updateDriverState(String driverId, boolean available);
+
     List<Driver> getNearByDrivers(Location location, Integer distance, Integer count);
 }

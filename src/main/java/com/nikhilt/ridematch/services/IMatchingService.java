@@ -8,5 +8,6 @@ import java.util.List;
 public interface IMatchingService {
 
     void addMatch(String riderId, List<Driver> drivers);
+
     Driver getNthMatch(String riderId, int n) throws MatchException;
 }

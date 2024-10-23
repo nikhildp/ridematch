@@ -16,7 +16,7 @@ public class RideServiceImpl implements IRideService {
 
     @Override
     public void addRide(String rideId, Driver driver, Rider rider) throws RideExistsException {
-        if(rideRepository.contains(rideId)){
+        if (rideRepository.contains(rideId)) {
             throw new RideExistsException();
         }
         rideRepository.addValue(rideId, new Ride(rideId, driver, rider));

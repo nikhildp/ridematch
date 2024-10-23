@@ -1,4 +1,4 @@
 package com.nikhilt.ridematch.commands;
 
-public class AddRider extends Command{
+public class AddRider extends Command {
 }
