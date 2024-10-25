@@ -55,7 +55,7 @@ public class RideManager extends IRideManager {
         try {
             nthDriver = matchingService.getNthMatch(startRide.getRiderId(), startRide.getN());
         } catch (MatchException e) {
-            return Message.NO_DRIVERS_AVAILABLE;
+            return INVALID_RIDE;
         }
 
         Rider rider = riderService.getRider(startRide.getRiderId());
@@ -88,7 +88,7 @@ public class RideManager extends IRideManager {
             return INVALID_RIDE;
         }
         try {
-            return billingService.generateBill(ride).toString();
+            return "BILL " + billingService.generateBill(ride).toString();
         } catch (IllegalRideStateException e) {
             return RIDE_NOT_COMPLETED;
         }
@@ -101,7 +101,7 @@ public class RideManager extends IRideManager {
 
     @Override
     public void addRider(AddRider addRider) {
-        riderService.addRider(addRider.getRiderId(),addRider.getLocation());
+        riderService.addRider(addRider.getRiderId(), addRider.getLocation());
     }
 
     @Override

@@ -10,9 +10,14 @@ import com.nikhilt.ridematch.commands.StopRide;
 public abstract class IRideManager {
 
     public abstract void addDriver(AddDriver addDriver);
+
     public abstract void addRider(AddRider addRider);
+
     public abstract String match(Match match);
+
     public abstract String startRide(StartRide startRide);
+
     public abstract String stopRide(StopRide stopRide);
+
     public abstract String generateBill(Bill bill);
 }

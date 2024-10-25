@@ -55,9 +55,9 @@ public class Ride {
     }
 
     public float getRideDistance() throws IllegalRideStateException {
-        if(state!=RideState.STOPPED){
+        if (state != RideState.STOPPED) {
             throw new IllegalRideStateException();
         }
-        return Float.parseFloat(String.format("%.2f",distance));
+        return Float.parseFloat(String.format("%.2f", distance));
     }
 }
