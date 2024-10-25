@@ -1,15 +1,18 @@
 package com.nikhilt.ridematch.services;
 
-import com.nikhilt.ridematch.dtos.RideSummary;
-import com.nikhilt.ridematch.entities.Location;
+import com.nikhilt.ridematch.commands.AddDriver;
+import com.nikhilt.ridematch.commands.AddRider;
+import com.nikhilt.ridematch.commands.Bill;
+import com.nikhilt.ridematch.commands.Match;
+import com.nikhilt.ridematch.commands.StartRide;
+import com.nikhilt.ridematch.commands.StopRide;
 
 public abstract class IRideManager {
 
-    public abstract String startRide(String rideId, int n, String riderId);
-
-    public abstract String stopRide(String rideId, Location destination, int timeTakenInMin);
-
-    public abstract RideSummary generateBill(String rideId);
-
-    public abstract void match(String riderId);
+    public abstract void addDriver(AddDriver addDriver);
+    public abstract void addRider(AddRider addRider);
+    public abstract String match(Match match);
+    public abstract String startRide(StartRide startRide);
+    public abstract String stopRide(StopRide stopRide);
+    public abstract String generateBill(Bill bill);
 }

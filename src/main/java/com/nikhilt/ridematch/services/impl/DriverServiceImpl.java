@@ -15,9 +15,13 @@ import java.util.stream.Stream;
 public class DriverServiceImpl implements IDriverService {
     DriverRepository driverRepository;
 
+    public DriverServiceImpl() {
+        this.driverRepository = new DriverRepository();
+    }
+
     @Override
-    public void addDriver(String driverId, int x, int y) {
-        driverRepository.addValue(driverId, new Driver(driverId, new Location(x, y)));
+    public void addDriver(String driverId, Location location) {
+        driverRepository.addValue(driverId, new Driver(driverId, location));
     }
 
     public void updateDriverState(String driverId, boolean available) {

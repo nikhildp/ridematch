@@ -25,9 +25,9 @@ public class Location {
         this.y = y;
     }
 
-    public double getDistance(Location that) {
+    public float getDistance(Location that) {
         int xDel = that.x - this.x;
         int yDel = that.y - this.y;
-        return Math.sqrt(xDel * xDel + yDel * yDel);
+        return (float) Math.sqrt(xDel * xDel + yDel * yDel);
     }
 }

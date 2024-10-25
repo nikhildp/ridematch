@@ -63,6 +63,4 @@ repositories {
 //Add your dependencies here
 dependencies {
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version:'5.2.0'
-    compile 'org.gretty:gretty-common:3.0.4'
-
 }

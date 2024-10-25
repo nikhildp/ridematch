@@ -1,13 +1,14 @@
 package com.nikhilt.ridematch.entities;
 
 public class Driver {
+    boolean available;
     private String driverId;
     private Location location;
-    boolean available;
 
     public Driver(String driverId, Location location) {
         this.driverId = driverId;
         this.location = location;
+        this.available = true;
     }
 
     public String getDriverId() {

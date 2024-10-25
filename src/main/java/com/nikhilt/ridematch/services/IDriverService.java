@@ -6,7 +6,7 @@ import com.nikhilt.ridematch.entities.Location;
 import java.util.List;
 
 public interface IDriverService {
-    void addDriver(String driverId, int x, int y);
+    void addDriver(String driverId, Location location);
 
     void updateDriverState(String driverId, boolean available);
 

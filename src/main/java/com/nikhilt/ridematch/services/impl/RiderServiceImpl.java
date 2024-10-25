@@ -13,8 +13,8 @@ public class RiderServiceImpl implements IRiderService {
     }
 
     @Override
-    public void addRider(String riderId, int x, int y) {
-        riderRepository.addValue(riderId, new Rider(riderId, new Location(x, y)));
+    public void addRider(String riderId, Location location) {
+        riderRepository.addValue(riderId, new Rider(riderId, location));
     }
 
     @Override

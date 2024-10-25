@@ -5,9 +5,9 @@ import com.nikhilt.ridematch.entities.Ride;
 public class RideSummary {
     private final String rideId;
     private final String driverId;
-    private final Float fare;
+    private final double fare;
 
-    RideSummary(Ride ride) {
+    public RideSummary(Ride ride) {
         this.rideId = ride.getRideId();
         this.driverId = ride.getDriver().getDriverId();
         this.fare = ride.getFare();
@@ -15,6 +15,6 @@ public class RideSummary {
 
     @Override
     public String toString() {
-        return rideId + " " + driverId + " " + fare;
+        return rideId + " " + driverId + " " + String.format("%.2f", fare);
     }
 }

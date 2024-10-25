@@ -31,7 +31,7 @@ public class MatchingServiceImpl implements IMatchingService {
         if (drivers.size() < n) {
             throw new NotEnoughDriversException();
         }
-        Driver driver = drivers.get(n);
+        Driver driver = drivers.get(n - 1);
         if (!driver.isAvailable()) {
             throw new DriverNotAvailableException();
         }

@@ -1,6 +1,8 @@
 package com.nikhilt.ridematch.entities;
 
 import com.nikhilt.ridematch.constants.RideState;
+import com.nikhilt.ridematch.exceptions.ride.IllegalRideStateException;
+import com.nikhilt.ridematch.exceptions.ride.RideException;
 
 public class Ride {
     private final String rideId;
@@ -8,9 +10,10 @@ public class Ride {
     private final Driver driver;
     private final Location source;
     private Location destination;
+    private float distance;
     private Integer timeTaken;
     private RideState state;
-    private Float fare;
+    private float fare;
 
     public Ride(String rideId, Driver driver, Rider rider) {
         this.rideId = rideId;
@@ -24,32 +27,23 @@ public class Ride {
         return timeTaken;
     }
 
-    public Float getFare() {
+    public double getFare() {
         return fare;
     }
 
-    public void setFare(Float fare) {
+    public void setFare(float fare) {
         this.fare = fare;
     }
 
-    public Location getSource() {
-        return source;
-    }
-
-    public Location getDestination() {
-        return destination;
-    }
-
-
-    public boolean stopRide(Location destination, Integer timeTaken) {
+    public void stopRide(Location destination, Integer timeTaken) throws RideException {
         if (state != RideState.STARTED) {
-            return false;
+            throw new IllegalRideStateException();
         }
 
         this.destination = destination;
+        this.distance = destination.getDistance(source);
         this.timeTaken = timeTaken;
         state = RideState.STOPPED;
-        return true;
     }
 
     public String getRideId() {
@@ -58,5 +52,12 @@ public class Ride {
 
     public Driver getDriver() {
         return driver;
+    }
+
+    public float getRideDistance() throws IllegalRideStateException {
+        if(state!=RideState.STOPPED){
+            throw new IllegalRideStateException();
+        }
+        return Float.parseFloat(String.format("%.2f",distance));
     }
 }
