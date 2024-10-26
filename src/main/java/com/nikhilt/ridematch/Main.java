@@ -18,8 +18,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // the file to be opened for reading
-            FileInputStream fis = new FileInputStream("/Users/nikdivak/Downloads/java-gradle-starter-kit/sample_input/input1.txt");
-//            FileInputStream fis = new FileInputStream(args[0]);
+            FileInputStream fis = new FileInputStream(args[0]);
             Scanner sc = new Scanner(fis); // file to be scanned
             // returns true if there is another line to read
             IRideManager rideManager = new RideManager();
