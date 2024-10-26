@@ -20,7 +20,7 @@ public class BillingServiceImpl implements IBillingService {
 
     private void calculateFare(Ride ride) throws IllegalRideStateException {
         float fare = BASE_FARE
-                + PER_KM * ride.getRideDistance()
+                + Float.parseFloat(String.format("%.2f", PER_KM * ride.getRideDistance()))
                 + PER_MIN * ride.getTimeTaken();
         fare = fare * (100 + ST_PERCENT) / 100;
         ride.setFare(fare);

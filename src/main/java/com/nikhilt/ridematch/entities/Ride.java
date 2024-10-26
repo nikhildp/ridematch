@@ -23,11 +23,15 @@ public class Ride {
         this.state = RideState.STARTED;
     }
 
+    public Location getDestination() {
+        return destination;
+    }
+
     public Integer getTimeTaken() {
         return timeTaken;
     }
 
-    public double getFare() {
+    public float getFare() {
         return fare;
     }
 
@@ -41,7 +45,7 @@ public class Ride {
         }
 
         this.destination = destination;
-        this.distance = destination.getDistance(source);
+        this.distance = Float.parseFloat(String.format("%.2f", destination.getDistance(source)));
         this.timeTaken = timeTaken;
         state = RideState.STOPPED;
     }
@@ -58,6 +62,14 @@ public class Ride {
         if (state != RideState.STOPPED) {
             throw new IllegalRideStateException();
         }
-        return Float.parseFloat(String.format("%.2f", distance));
+        return distance;
+    }
+
+    public boolean isStopped() {
+        return state.equals(RideState.STOPPED);
+    }
+
+    public boolean isInProgress() {
+        return state.equals(RideState.STARTED);
     }
 }
